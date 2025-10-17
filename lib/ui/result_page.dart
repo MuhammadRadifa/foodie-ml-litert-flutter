@@ -115,7 +115,12 @@ class _ResultBodyState extends State<_ResultBody> {
                       return Column(
                         spacing: 8,
                         children: classifications.entries.map((entry) {
-                          final percentage = (entry.value).toStringAsFixed(2);
+                          double value = entry.value.toDouble();
+
+                          while (value >= 100) {
+                            value = value / 10;
+                          }
+                          final percentage = (value).toStringAsFixed(2);
                           return ClassificatioinItem(
                             item: entry.key,
                             value: "$percentage%",
