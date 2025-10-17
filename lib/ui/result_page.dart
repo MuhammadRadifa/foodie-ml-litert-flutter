@@ -118,7 +118,7 @@ class _ResultBodyState extends State<_ResultBody> {
                           double value = entry.value.toDouble();
 
                           while (value >= 100) {
-                            value = value / 10;
+                            value = value / 3;
                           }
                           final percentage = (value).toStringAsFixed(2);
                           return ClassificatioinItem(
